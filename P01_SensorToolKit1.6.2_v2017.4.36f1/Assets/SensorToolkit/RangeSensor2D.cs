@@ -50,7 +50,7 @@ namespace SensorToolkit
         Collider2D[] collidersBuffer;
         float timer = 0f;
 
-        protected override void Awake() 
+        protected override void Awake()
         {
             base.Awake();
 
@@ -70,7 +70,7 @@ namespace SensorToolkit
                 return;
             }
 
-            if (SensorUpdateMode == UpdateMode.FixedInterval) 
+            if (SensorUpdateMode == UpdateMode.FixedInterval)
             {
                 timer += Time.deltaTime;
                 if (timer >= CheckInterval)
@@ -146,12 +146,12 @@ namespace SensorToolkit
 
         void prepareCollidersBuffer()
         {
-            if (CurrentBufferSize == 0) 
+            if (CurrentBufferSize == 0)
             {
                 InitialBufferSize = Math.Max(1, InitialBufferSize);
                 CurrentBufferSize = InitialBufferSize;
             }
-            if (collidersBuffer == null || collidersBuffer.Length != CurrentBufferSize) 
+            if (collidersBuffer == null || collidersBuffer.Length != CurrentBufferSize)
             {
                 collidersBuffer = new Collider2D[CurrentBufferSize];
             }
